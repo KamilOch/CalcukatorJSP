@@ -56,9 +56,9 @@ public class CalcK {
 		case "8":
 		case "9":
 		case "0":
-			if(afterEqual) {
+			if (afterEqual) {
 				haveFirstNumber = false;
-				firstNumber= "";
+				firstNumber = "";
 			}
 			if (!haveFirstNumber) {
 				addNewStringToNumberOne(input);
@@ -86,6 +86,27 @@ public class CalcK {
 				value = firstNumber + " " + operation;
 				secondNumber = "";
 				haveOperation = true;
+			}
+			afterEqual = false;
+			break;
+
+		case ".":
+			if (!haveFirstNumber) {
+				if(firstNumber.isEmpty()) {
+					firstNumber = "0";
+				}
+				if (!firstNumber.contains(".")) {
+					addNewStringToNumberOne(input);
+					value = firstNumber;
+				}
+			} else {
+				if(secondNumber.isEmpty()) {
+					secondNumber = "0";
+				}
+				if (!secondNumber.contains(".")) {
+					addNewStringToNumberTwo(input);
+					value = firstNumber + " " + operation + " " + secondNumber;
+				}
 			}
 			afterEqual = false;
 			break;

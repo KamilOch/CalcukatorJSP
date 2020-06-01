@@ -169,5 +169,59 @@ public class CalculatorTest {
 		// then
 		assertEquals("8", obiekt.getValue());
 	}
+	
+	@Test
+	void shouldAddOnlyOneDotToFirstNumber() {
+		// given
+		CalcK obiekt = new CalcK();
+		// when
+		obiekt.caclulate("3");
+		obiekt.caclulate(".");
+		obiekt.caclulate(".");
+		obiekt.caclulate(".");
+	
+		// then
+		assertEquals("3.", obiekt.getValue());
+	}
+	
+	@Test
+	void shouldAddOnlyOneDotToSecondNumber() {
+		// given
+		CalcK obiekt = new CalcK();
+		// when
+		obiekt.caclulate("3");
+		obiekt.caclulate("+");
+		obiekt.caclulate("2");
+		obiekt.caclulate(".");
+		obiekt.caclulate(".");
+		obiekt.caclulate(".");
+
+		// then
+		assertEquals("3 + 2.", obiekt.getValue());
+	}
+	
+	@Test
+	void shouldAddZeroToEmptyFirstNumeberBeforDot() {
+		// given
+		CalcK obiekt = new CalcK();
+		// when
+		obiekt.caclulate(".");
+		obiekt.caclulate(".");
+		// then
+		assertEquals("0.", obiekt.getValue());
+	}
+	
+	@Test
+	void shouldAddZeroToEmptySecondNumeberBeforDot() {
+		// given
+		CalcK obiekt = new CalcK();
+		// when
+		obiekt.caclulate("3");
+		obiekt.caclulate("+");
+		obiekt.caclulate(".");
+		obiekt.caclulate(".");
+		// then
+		assertEquals("3 + 0.", obiekt.getValue());
+	}
 
 }
