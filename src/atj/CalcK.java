@@ -92,7 +92,7 @@ public class CalcK {
 
 		case ".":
 			if (!haveFirstNumber) {
-				if(firstNumber.isEmpty()) {
+				if (firstNumber.isEmpty()) {
 					firstNumber = "0";
 				}
 				if (!firstNumber.contains(".")) {
@@ -100,7 +100,7 @@ public class CalcK {
 					value = firstNumber;
 				}
 			} else {
-				if(secondNumber.isEmpty()) {
+				if (secondNumber.isEmpty()) {
 					secondNumber = "0";
 				}
 				if (!secondNumber.contains(".")) {
@@ -112,6 +112,23 @@ public class CalcK {
 			break;
 
 		// cd case ..... sqrt % +/-
+
+		case "sqrt":
+			// TODO
+			afterEqual = false;
+			break;
+		case "%":
+			// TODO
+			afterEqual = false;
+			break;
+		case "+/-":
+			// TODO
+			value = String.valueOf(new BigDecimal(firstNumber).multiply(new BigDecimal("-1")));
+			firstNumber = value;
+			haveFirstNumber = true;
+			
+			afterEqual = true;
+			break;
 
 		}
 	}
