@@ -87,12 +87,16 @@ public class CalcK {
 		switch (operation) {
 		case "+":
 			value = String.valueOf((Double.parseDouble(firstNumber) + Double.parseDouble(secondNumber)));
+			break;
 		case "-":
 			value = String.valueOf((Double.parseDouble(firstNumber) - Double.parseDouble(secondNumber)));
+			break;
 		case "*":
 			value = String.valueOf((Double.parseDouble(firstNumber) * Double.parseDouble(secondNumber)));
+			break;
 		case "/":
 			value = String.valueOf((Double.parseDouble(firstNumber) / Double.parseDouble(secondNumber)));
+			break;
 		}
 
 	}
