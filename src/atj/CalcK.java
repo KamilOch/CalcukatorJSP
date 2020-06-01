@@ -36,6 +36,7 @@ public class CalcK {
 		case "=":
 			if (haveFirstNumber /* && haveSecondNumber */ && haveOperation) {
 				countResult(firstNumber, secondNumber, operation);
+				haveOperation = false;
 			}
 			break;
 
