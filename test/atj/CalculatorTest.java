@@ -152,4 +152,22 @@ public class CalculatorTest {
 		assertEquals("3", obiekt.getValue());
 	}
 
+	@Test
+	void shouldAfterCAddTwoNumbersAndAddNextNumber() {
+		// given
+		CalcK obiekt = new CalcK();
+		// when
+		obiekt.caclulate("3");
+		obiekt.caclulate("C");
+		obiekt.caclulate("1");
+		obiekt.caclulate("+");
+		obiekt.caclulate("2");
+		obiekt.caclulate("+");
+		obiekt.caclulate("5");
+		obiekt.caclulate("=");
+
+		// then
+		assertEquals("8", obiekt.getValue());
+	}
+
 }

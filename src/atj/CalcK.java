@@ -11,6 +11,7 @@ public class CalcK {
 
 	private boolean haveFirstNumber;
 	private boolean haveOperation;
+	private boolean afterEqual;
 
 	public String getValue() {
 		return value;
@@ -32,11 +33,16 @@ public class CalcK {
 			firstNumber = "";
 			secondNumber = "";
 			haveFirstNumber = false;
+			afterEqual = false;
 			break;
 		case "=":
 			if (haveFirstNumber && haveOperation) {
 				countResult(firstNumber, secondNumber, operation);
 				haveOperation = false;
+				firstNumber = value;
+				secondNumber = "";
+				afterEqual = true;
+
 			}
 			break;
 
@@ -50,13 +56,18 @@ public class CalcK {
 		case "8":
 		case "9":
 		case "0":
+			if(afterEqual) {
+				haveFirstNumber = false;
+				firstNumber= "";
+			}
 			if (!haveFirstNumber) {
 				addNewStringToNumberOne(input);
 				value = firstNumber;
-			} else if (haveFirstNumber) {
+			} else {
 				addNewStringToNumberTwo(input);
 				value = firstNumber + " " + operation + " " + secondNumber;
 			}
+			afterEqual = false;
 			break;
 		case "+":
 		case "-":
@@ -73,9 +84,10 @@ public class CalcK {
 				haveFirstNumber = true;
 				operation = input;
 				value = firstNumber + " " + operation;
-				secondNumber = " ";
+				secondNumber = "";
 				haveOperation = true;
 			}
+			afterEqual = false;
 			break;
 
 		// cd case ..... sqrt % +/-
@@ -84,7 +96,7 @@ public class CalcK {
 	}
 
 	private void countResult(String firstNumber, String secondNumber, String operation) {
-		
+
 		switch (operation) {
 		case "+":
 			value = String.valueOf((new BigDecimal(firstNumber).add(new BigDecimal(secondNumber))));
