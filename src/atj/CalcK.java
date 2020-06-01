@@ -1,14 +1,15 @@
 package atj;
 
+import java.math.BigDecimal;
+
 public class CalcK {
 
 	private String value = "0";
-	private String firstNumber = " ";
-	private String secondNumber = " ";
+	private String firstNumber = "";
+	private String secondNumber = "";
 	private String operation;
 
 	private boolean haveFirstNumber;
-	private boolean haveSecondNumber;
 	private boolean haveOperation;
 
 	public String getValue() {
@@ -28,13 +29,12 @@ public class CalcK {
 		switch (input) {
 		case "C":
 			value = "0";
-			firstNumber = " ";
-			secondNumber = " ";
+			firstNumber = "";
+			secondNumber = "";
 			haveFirstNumber = false;
-			haveSecondNumber = false;
 			break;
 		case "=":
-			if (haveFirstNumber /* && haveSecondNumber */ && haveOperation) {
+			if (haveFirstNumber && haveOperation) {
 				countResult(firstNumber, secondNumber, operation);
 				haveOperation = false;
 			}
@@ -67,11 +67,12 @@ public class CalcK {
 				haveOperation = true;
 				haveFirstNumber = true;
 				value = firstNumber + " " + operation;
-			} else if (haveFirstNumber /* && haveSecondNumber */) {
+			} else if (haveFirstNumber) {
 				countResult(firstNumber, secondNumber, operation);
 				firstNumber = value;
 				haveFirstNumber = true;
-//				haveSecondNumber = false;
+				operation = input;
+				value = firstNumber + " " + operation;
 				secondNumber = " ";
 				haveOperation = true;
 			}
@@ -83,19 +84,19 @@ public class CalcK {
 	}
 
 	private void countResult(String firstNumber, String secondNumber, String operation) {
-		// TODO Auto-generated method stub
+		
 		switch (operation) {
 		case "+":
-			value = String.valueOf((Double.parseDouble(firstNumber) + Double.parseDouble(secondNumber)));
+			value = String.valueOf((new BigDecimal(firstNumber).add(new BigDecimal(secondNumber))));
 			break;
 		case "-":
-			value = String.valueOf((Double.parseDouble(firstNumber) - Double.parseDouble(secondNumber)));
+			value = String.valueOf((new BigDecimal(firstNumber).subtract(new BigDecimal(secondNumber))));
 			break;
 		case "*":
-			value = String.valueOf((Double.parseDouble(firstNumber) * Double.parseDouble(secondNumber)));
+			value = String.valueOf((new BigDecimal(firstNumber).multiply(new BigDecimal(secondNumber))));
 			break;
 		case "/":
-			value = String.valueOf((Double.parseDouble(firstNumber) / Double.parseDouble(secondNumber)));
+			value = String.valueOf((new BigDecimal(firstNumber).divide(new BigDecimal(secondNumber))));
 			break;
 		}
 
