@@ -169,7 +169,7 @@ public class CalculatorTest {
 		// then
 		assertEquals("8", obiekt.getValue());
 	}
-	
+
 	@Test
 	void shouldAddOnlyOneDotToFirstNumber() {
 		// given
@@ -179,11 +179,11 @@ public class CalculatorTest {
 		obiekt.caclulate(".");
 		obiekt.caclulate(".");
 		obiekt.caclulate(".");
-	
+
 		// then
 		assertEquals("3.", obiekt.getValue());
 	}
-	
+
 	@Test
 	void shouldAddOnlyOneDotToSecondNumber() {
 		// given
@@ -199,7 +199,7 @@ public class CalculatorTest {
 		// then
 		assertEquals("3 + 2.", obiekt.getValue());
 	}
-	
+
 	@Test
 	void shouldAddZeroToEmptyFirstNumeberBeforDot() {
 		// given
@@ -210,7 +210,7 @@ public class CalculatorTest {
 		// then
 		assertEquals("0.", obiekt.getValue());
 	}
-	
+
 	@Test
 	void shouldAddZeroToEmptySecondNumeberBeforDot() {
 		// given
@@ -222,6 +222,61 @@ public class CalculatorTest {
 		obiekt.caclulate(".");
 		// then
 		assertEquals("3 + 0.", obiekt.getValue());
+	}
+
+	@Test
+	void shouldShowAFractionValue() {
+		// given
+		CalcK obiekt = new CalcK();
+		// when
+		obiekt.caclulate("2");
+		obiekt.caclulate("0");
+		obiekt.caclulate("%");
+		obiekt.caclulate("=");
+		// then
+		assertEquals("0.2", obiekt.getValue());
+	}
+
+	@Test
+	void shouldShowTheNumberChangedByAPercentageOfTheNumber() {
+		// given
+		CalcK obiekt = new CalcK();
+		// when
+		obiekt.caclulate("2");
+		obiekt.caclulate("0");
+		obiekt.caclulate("+");
+		obiekt.caclulate("1");
+		obiekt.caclulate("0");
+		obiekt.caclulate("%");
+		obiekt.caclulate("=");
+		// then
+		assertEquals("22", obiekt.getValue());
+	}
+	
+	
+	@Test
+	void shouldReturnERRValue() {
+		CalcK obiekt = new CalcK();
+		// when
+		obiekt.caclulate("2");
+		obiekt.caclulate("/");
+		obiekt.caclulate("0");
+		obiekt.caclulate(".");
+		obiekt.caclulate("0");
+		obiekt.caclulate("0");
+		obiekt.caclulate("0");
+		obiekt.caclulate("0");
+		obiekt.caclulate("0");
+		obiekt.caclulate("0");
+		obiekt.caclulate("0");
+		obiekt.caclulate("0");
+		obiekt.caclulate("0");
+		obiekt.caclulate("0");
+		obiekt.caclulate("1");
+		obiekt.caclulate("=");
+		// then
+		assertEquals("ERR", obiekt.getValue());
+		
 	}
 
 }
