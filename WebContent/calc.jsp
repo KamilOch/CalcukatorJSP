@@ -27,57 +27,76 @@
 				<tr>
 					<td colspan="4" style="text-align: left"><input type="text"
 						class="btn btn-secondary3" id="obiekt" name="value"
-						value="${obiekt.value}"></td>
+						value="${obiekt.value}" disabled="disabled"></td>
 
 					<td><input name="btn" type="submit" value="C"
 						class="btn btn-secondary" /></td>
 				</tr>
 				<tr>
 					<td><input name="btn" type="submit" value="7"
-						class="btn btn-secondary" /></td>
+						class="btn btn-secondary"
+						${obiekt.value eq 'ERR' ? 'disabled="disabled"' : ''} /></td>
 					<td><input name="btn" type="submit" value="8"
-						class="btn btn-secondary" /></td>
+						class="btn btn-secondary"
+						${obiekt.value eq 'ERR' ? 'disabled="disabled"' : ''} /></td>
 					<td><input name="btn" type="submit" value="9"
-						class="btn btn-secondary" /></td>
+						class="btn btn-secondary"
+						${obiekt.value eq 'ERR' ? 'disabled="disabled"' : ''} /></td>
 					<td><input name="btn" type="submit" value="/"
-						class="btn btn-secondary" /></td>
+						class="btn btn-secondary"
+						${obiekt.value eq 'ERR' ? 'disabled="disabled"' : ''} /></td>
 					<td><button type="submit" name="btn" class="btn btn-secondary"
-							value="sqrt">&radic;</button></td>
+							value="sqrt"
+							${obiekt.value eq 'ERR' ? 'disabled="disabled"' : ''}>&radic;</button></td>
 
 				</tr>
 				<tr>
 					<td><input name="btn" type="submit" value="4"
-						class="btn btn-secondary" /></td>
+						class="btn btn-secondary"
+						${obiekt.value eq 'ERR' ? 'disabled="disabled"' : ''} /></td>
 					<td><input name="btn" type="submit" value="5"
-						class="btn btn-secondary" /></td>
+						class="btn btn-secondary"
+						${obiekt.value eq 'ERR' ? 'disabled="disabled"' : ''} /></td>
 					<td><input name="btn" type="submit" value="6"
-						class="btn btn-secondary" /></td>
+						class="btn btn-secondary"
+						${obiekt.value eq 'ERR' ? 'disabled="disabled"' : ''} /></td>
 					<td><input name="btn" type="submit" value="*"
-						class="btn btn-secondary" /></td>
+						class="btn btn-secondary"
+						${obiekt.value eq 'ERR' ? 'disabled="disabled"' : ''} /></td>
 					<td><input name="btn" type="submit" value="%"
-						class="btn btn-secondary" /></td>
+						class="btn btn-secondary"
+						${obiekt.value eq 'ERR' ? 'disabled="disabled"' : ''} /></td>
 				</tr>
 				<tr>
 					<td><input name="btn" type="submit" value="1"
-						class="btn btn-secondary" /></td>
+						class="btn btn-secondary"
+						${obiekt.value eq 'ERR' ? 'disabled="disabled"' : ''} /></td>
 					<td><input name="btn" type="submit" value="2"
-						class="btn btn-secondary" /></td>
+						class="btn btn-secondary"
+						${obiekt.value eq 'ERR' ? 'disabled="disabled"' : ''} /></td>
 					<td><input name="btn" type="submit" value="3"
-						class="btn btn-secondary" /></td>
+						class="btn btn-secondary"
+						${obiekt.value eq 'ERR' ? 'disabled="disabled"' : ''} /></td>
 					<td><input name="btn" type="submit" value="-"
-						class="btn btn-secondary" /></td>
+						class="btn btn-secondary"
+						${obiekt.value eq 'ERR' ? 'disabled="disabled"' : ''} /></td>
 					<td rowspan="2"><input name="btn" type="submit" value="="
-						class="btn btn-secondary2" /></td>
+						class="btn btn-secondary2"
+						${obiekt.value eq 'ERR' ? 'disabled="disabled"' : ''} /></td>
 				</tr>
 				<tr>
 					<td><input name="btn" type="submit" value="0"
-						class="btn btn-secondary" /></td>
+						class="btn btn-secondary"
+						${obiekt.value eq 'ERR' ? 'disabled="disabled"' : ''} /></td>
 					<td><input name="btn" type="submit" value="."
-						class="btn btn-secondary" /></td>
+						class="btn btn-secondary"
+						${obiekt.value eq 'ERR' ? 'disabled="disabled"' : ''} /></td>
 					<td><input name="btn" type="submit" value="+/-"
-						class="btn btn-secondary" /></td>
+						class="btn btn-secondary"
+						${obiekt.value eq 'ERR' ? 'disabled="disabled"' : ''} /></td>
 					<td><input name="btn" type="submit" value="+"
-						class="btn btn-secondary" /></td>
+						class="btn btn-secondary"
+						${obiekt.value eq 'ERR' ? 'disabled="disabled"' : ''} /></td>
 				</tr>
 			</table>
 		</form>

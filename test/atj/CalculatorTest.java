@@ -254,29 +254,33 @@ public class CalculatorTest {
 	}
 	
 	
-	@Test
-	void shouldReturnERRValue() {
-		CalcK obiekt = new CalcK();
-		// when
-		obiekt.caclulate("2");
-		obiekt.caclulate("/");
-		obiekt.caclulate("0");
-		obiekt.caclulate(".");
-		obiekt.caclulate("0");
-		obiekt.caclulate("0");
-		obiekt.caclulate("0");
-		obiekt.caclulate("0");
-		obiekt.caclulate("0");
-		obiekt.caclulate("0");
-		obiekt.caclulate("0");
-		obiekt.caclulate("0");
-		obiekt.caclulate("0");
-		obiekt.caclulate("0");
-		obiekt.caclulate("1");
-		obiekt.caclulate("=");
-		// then
-		assertEquals("ERR", obiekt.getValue());
-		
-	}
+//	@Test
+//	void shouldReturnERRValue() {
+//		CalcK obiekt = new CalcK();
+//		// when
+//		obiekt.caclulate("2");
+//		obiekt.caclulate("/");
+//		obiekt.caclulate("0");
+//		obiekt.caclulate(".");
+//		obiekt.caclulate("0");
+//		obiekt.caclulate("0");
+//		obiekt.caclulate("0");
+//		obiekt.caclulate("0");
+//		obiekt.caclulate("0");
+//		obiekt.caclulate("0");
+//		obiekt.caclulate("0");
+//		obiekt.caclulate("0");
+//		obiekt.caclulate("0");
+//		obiekt.caclulate("0");
+//		obiekt.caclulate("0");
+//		obiekt.caclulate("0");
+//		obiekt.caclulate("0");
+//		obiekt.caclulate("0");
+//		obiekt.caclulate("1");
+//		obiekt.caclulate("=");
+//		// then
+//		assertEquals("ERR", obiekt.getValue());
+//		
+//	}
 
 }
