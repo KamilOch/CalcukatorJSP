@@ -120,15 +120,7 @@ public class CalcK {
 			break;
 
 		case "sqrt":
-		//case "sqrt":
-//		case "√":
-
-			// .setScale( 3, BigDecimal.ROUND_HALF_UP);
-
 			value = formatValue(String.valueOf(new BigDecimal(Math.sqrt(Double.parseDouble(firstNumber)))));
-			
-//			NumberFormat format = new DecimalFormat("0.####");
-//			value = format.format(new BigDecimal(Math.sqrt(Double.parseDouble(firstNumber))));
 			firstNumber = value;
 			haveFirstNumber = true;
 			afterEqual = true;
@@ -185,19 +177,11 @@ public class CalcK {
 			break;
 		case "/":
 			try {
-
 				value = formatValue(String.valueOf(
 						(new BigDecimal(firstNumber).divide(new BigDecimal(secondNumber), 8, RoundingMode.HALF_EVEN))));
 
-//				Locale.setDefault(new Locale("en", "US"));
-//				NumberFormat format = new DecimalFormat("0.####");
-//				value = format.format(
-//						(new BigDecimal(firstNumber).divide(new BigDecimal(secondNumber), 8, RoundingMode.HALF_EVEN)));
-
 			} catch (ArithmeticException e) {
 				value = "ERR";
-//				throw new ArithmeticException(
-//						"Non-terminating decimal expansion; " + "no exact representable decimal result.");
 			}
 			break;
 		}
