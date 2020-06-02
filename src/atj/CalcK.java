@@ -120,6 +120,8 @@ public class CalcK {
 			break;
 
 		case "sqrt":
+		//case "sqrt":
+//		case "√":
 
 			// .setScale( 3, BigDecimal.ROUND_HALF_UP);
 

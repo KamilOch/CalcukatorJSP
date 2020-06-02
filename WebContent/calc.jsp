@@ -16,7 +16,7 @@
 </head>
 <body>
 
-<%-- 	<jsp:useBean type="atj.Calc" id="obiekt" scope="session" /> --%>
+	<%-- 	<jsp:useBean type="atj.Calc" id="obiekt" scope="session" /> --%>
 	<jsp:useBean type="atj.CalcK" id="obiekt" scope="session" />
 
 	<div class="container">
@@ -41,10 +41,8 @@
 						class="btn btn-secondary" /></td>
 					<td><input name="btn" type="submit" value="/"
 						class="btn btn-secondary" /></td>
-					<td><input name="btn" type="submit" value="sqrt"
-						class="btn btn-secondary" /></td>
-
-<!-- 					<td><button type="button" class="btn btn-secondary">&radic;</button></td> -->
+					<td><button type="submit" name="btn" class="btn btn-secondary"
+							value="sqrt">&radic;</button></td>
 
 				</tr>
 				<tr>
