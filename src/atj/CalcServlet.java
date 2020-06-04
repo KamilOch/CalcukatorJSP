@@ -2,7 +2,6 @@ package atj;
 
 import java.io.IOException;
 
-//import javax.script.ScriptException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -31,10 +30,8 @@ public class CalcServlet extends HttpServlet {
 		String base = "/";
 		String url = base + "calc.jsp";
 		HttpSession session = request.getSession();
-//		Calc obiekt = (Calc) session.getAttribute("obiekt");
 		CalcK obiekt = (CalcK) session.getAttribute("obiekt");
 		if (obiekt == null) {
-//			obiekt = new Calc();
 			obiekt = new CalcK();
 			session.setAttribute("obiekt", obiekt);
 		}
@@ -42,25 +39,8 @@ public class CalcServlet extends HttpServlet {
 		if (request.getParameterMap().containsKey("btn")) {
 			String s = request.getParameter("btn");			
 		
-//			try {
 				obiekt.caclulate(s);
-//			} catch (ScriptException e) {
-//				e.printStackTrace();
-//			}
-		
-			
 		}
-
-//		String action = request.getParameter("action");
-//		if (action != null) {
-//			switch (action) {
-//			case "properties":
-//				url = base + "properties.jsp";
-//				break;
-//			default:
-//				break;
-//			}
-//		}
 
 		RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher(url);
 		requestDispatcher.forward(request, response);
